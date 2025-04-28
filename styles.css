@@ -1,0 +1,79 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #1a1a1a;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+}
+
+.start-button {
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.start-button:hover {
+    background-color: #45a049;
+}
+
+.countdown-container {
+    perspective: 1000px;
+}
+
+.countdown {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    transform-style: preserve-3d;
+    animation: rotate 6s linear infinite;
+    animation-play-state: paused;
+}
+
+.number {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 120px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #333;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    backface-visibility: hidden;
+    transform-origin: center;
+}
+
+.number:nth-child(1) { transform: rotateX(0deg) translateZ(100px); }
+.number:nth-child(2) { transform: rotateX(60deg) translateZ(100px); }
+.number:nth-child(3) { transform: rotateX(120deg) translateZ(100px); }
+.number:nth-child(4) { transform: rotateX(180deg) translateZ(100px); }
+.number:nth-child(5) { transform: rotateX(240deg) translateZ(100px); }
+.number:nth-child(6) { transform: rotateX(300deg) translateZ(100px); }
+
+@keyframes rotate {
+    0% { transform: rotateX(0deg); }
+    16.67% { transform: rotateX(-60deg); }
+    33.33% { transform: rotateX(-120deg); }
+    50% { transform: rotateX(-180deg); }
+    66.67% { transform: rotateX(-240deg); }
+    83.33% { transform: rotateX(-300deg); }
+    100% { transform: rotateX(-360deg); }
+} 
